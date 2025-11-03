@@ -1,0 +1,226 @@
+type: collection.insomnia.rest/5.0
+name: LOJA SPRICIO
+meta:
+  id: wrk_c0c24a6b21f14e10b1646882f21079f6
+  created: 1760363545116
+  modified: 1762169805076
+  description: ""
+collection:
+  - name: Clientes
+    meta:
+      id: fld_869213461811421d80b351226a90b0aa
+      created: 1761583832199
+      modified: 1761583832199
+      sortKey: -1761583832199
+      description: ""
+    children:
+      - url: localhost:8081/cliente
+        name: Criar Cliente
+        meta:
+          id: req_815ecd590a614487b6149311d631ce50
+          created: 1761583843744
+          modified: 1762169615130
+          isPrivate: false
+          description: ""
+          sortKey: -1761583843744
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            		"nomeCliente": "Bryan",
+            		"cpfCliente": "46559712332"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/cliente
+        name: Listar Cliente
+        meta:
+          id: req_1a880045a0ca47d09c209d7a0b8ed32d
+          created: 1761588489961
+          modified: 1762168759183
+          isPrivate: false
+          description: ""
+          sortKey: -1761583843844
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_558c0ad2c8014981abf5ec36f8a5886d
+      created: 1761583870739
+      modified: 1761583870739
+      sortKey: -1761583870739
+      description: ""
+    children:
+      - url: localhost:8081/produtos
+        name: Select todos
+        meta:
+          id: req_82b993ebbc3e4db29cffdf46cd07e7e0
+          created: 1760363570882
+          modified: 1762169661596
+          isPrivate: false
+          description: ""
+          sortKey: -1761583890531
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"descricao" : "TOM ",
+            	"valor": 7.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/2
+        name: Select ID
+        meta:
+          id: req_55d7569de904449db4c43225098d374c
+          created: 1760363675732
+          modified: 1762169751852
+          isPrivate: false
+          description: ""
+          sortKey: -1761583890481
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos
+        name: Novo Registro
+        meta:
+          id: req_1016ea1e81044019aff7241474078fd3
+          created: 1760364082160
+          modified: 1762169695720
+          isPrivate: false
+          description: ""
+          sortKey: -1761583890431
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"descricao" : " Bryan ",
+            	"valor": 7.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/1
+        name: Delete
+        meta:
+          id: req_d6f6e2d7436148e1b0b37fffdde9b475
+          created: 1760378434540
+          modified: 1761583907334
+          isPrivate: false
+          description: ""
+          sortKey: -1761583890331
+        method: DELETE
+        parameters:
+          - id: pair_0969bec0e997481ab7974861ec9a9481
+            name: ""
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos/2
+        name: Alterar
+        meta:
+          id: req_3571d35de1f64ad587c69eb8d2eef167
+          created: 1761578263650
+          modified: 1762169774347
+          isPrivate: false
+          description: ""
+          sortKey: -1761583890631
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"descricao" : " Bryan2 ",
+            	"valor": 7.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_8e013b1d51b5f19b6cb735ed9723afaeba3cccc8
+    created: 1760363545128
+    modified: 1760363545128
+environments:
+  name: Base Environment
+  meta:
+    id: env_8e013b1d51b5f19b6cb735ed9723afaeba3cccc8
+    created: 1760363545122
+    modified: 1760363545122
+    isPrivate: false
