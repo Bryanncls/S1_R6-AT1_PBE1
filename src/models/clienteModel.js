@@ -13,6 +13,12 @@ const clienteModel = {
         return rows;
     },
 
+    selecionarPorCpf: async (cpfCliente) => {
+        const sql = 'SELECT * FROM clientes WHERE cpfCliente = ?;';
+        const [rows] = await pool.query(sql, [cpfCliente]);
+        return rows;
+    },
+
     inserirCliente: async (nomeCliente, cpfCliente) => {
         const sql = 'INSERT INTO clientes (nomeCliente, cpfCliente) VALUES (?, ?);';
         const values = [nomeCliente, cpfCliente];
@@ -35,4 +41,3 @@ const clienteModel = {
 };
 
 module.exports = { clienteModel };
-
