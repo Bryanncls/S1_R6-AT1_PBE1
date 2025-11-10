@@ -7,18 +7,32 @@ const clienteModel = {
         return rows;
     },
 
+    selecionarPorId: async (idCliente) => {
+        const sql = 'SELECT * FROM clientes WHERE idCliente = ?;';
+        const [rows] = await pool.query(sql, [idCliente]);
+        return rows;
+    },
+
     inserirCliente: async (nomeCliente, cpfCliente) => {
         const sql = 'INSERT INTO clientes (nomeCliente, cpfCliente) VALUES (?, ?);';
         const values = [nomeCliente, cpfCliente];
         const [rows] = await pool.query(sql, values);
         return rows;
     },
-    buscarCpf: async (cpfCliente) => {
-        const sql = 'SELECT * FROM Clientes WHERE cpf = ?;';
-        const [rows] = await pool.query(sql, cpf);
+
+    atualizarCliente: async (idCliente, nomeCliente, cpfCliente) => {
+        const sql = 'UPDATE clientes SET nomeCliente = ?, cpfCliente = ? WHERE idCliente = ?;';
+        const values = [nomeCliente, cpfCliente, idCliente];
+        const [rows] = await pool.query(sql, values);
         return rows;
-      
+    },
+
+    deletarCliente: async (idCliente) => {
+        const sql = 'DELETE FROM clientes WHERE idCliente = ?;';
+        const [rows] = await pool.query(sql, [idCliente]);
+        return rows;
     }
 };
 
 module.exports = { clienteModel };
+
